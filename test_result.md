@@ -101,3 +101,173 @@
 #====================================================================================================
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
+
+user_problem_statement: "Build a yoga training app with video call facility, diet controlling, AI posture matching, and health check features. Cross-platform (iOS, Android, Web)."
+
+backend:
+  - task: "User Authentication (Register & Login)"
+    implemented: true
+    working: "unknown"
+    file: "/app/backend/server.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "unknown"
+        agent: "main"
+        comment: "Implemented user registration and login with JWT tokens. Supports instructor and student roles."
+        
+  - task: "Diet Plans CRUD"
+    implemented: true
+    working: "unknown"
+    file: "/app/backend/server.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "unknown"
+        agent: "main"
+        comment: "Implemented diet plan creation, listing, and deletion. Instructors can create plans for students."
+        
+  - task: "Health Metrics Tracking"
+    implemented: true
+    working: "unknown"
+    file: "/app/backend/server.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "unknown"
+        agent: "main"
+        comment: "Implemented health metrics with weight, height, BMI auto-calculation, body measurements, and progress photos (base64)."
+        
+  - task: "Workout Logging & Stats"
+    implemented: true
+    working: "unknown"
+    file: "/app/backend/server.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "unknown"
+        agent: "main"
+        comment: "Implemented workout logging with type, duration, calories. Includes streak calculation (current and longest)."
+        
+  - task: "Flexibility Scores"
+    implemented: true
+    working: "unknown"
+    file: "/app/backend/server.py"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: true
+    status_history:
+      - working: "unknown"
+        agent: "main"
+        comment: "Implemented flexibility score tracking with pose name, score (0-100), pose image, and feedback."
+        
+  - task: "Video Session Management"
+    implemented: true
+    working: "unknown"
+    file: "/app/backend/server.py"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: true
+    status_history:
+      - working: "unknown"
+        agent: "main"
+        comment: "Implemented video session CRUD with room IDs, scheduling, and status management."
+
+frontend:
+  - task: "Authentication Flow"
+    implemented: true
+    working: "unknown"
+    file: "/app/frontend/app/auth/"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: "unknown"
+        agent: "main"
+        comment: "Implemented login/register screens with role selection (instructor/student). Using AuthContext for state management."
+        
+  - task: "Dashboard"
+    implemented: true
+    working: "unknown"
+    file: "/app/frontend/app/(tabs)/dashboard.tsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: "unknown"
+        agent: "main"
+        comment: "Implemented dashboard with stats cards showing workout streak, total workouts, minutes, and flexibility score."
+        
+  - task: "Video Call Screen"
+    implemented: true
+    working: "unknown"
+    file: "/app/frontend/app/(tabs)/video.tsx"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: false
+    status_history:
+      - working: "unknown"
+        agent: "main"
+        comment: "Basic video call UI with mock controls. Ready for WebRTC integration."
+        
+  - task: "Diet Plans Management"
+    implemented: true
+    working: "unknown"
+    file: "/app/frontend/app/(tabs)/diet.tsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: "unknown"
+        agent: "main"
+        comment: "Implemented diet plans listing and creation modal. Instructors can create plans for students with meals and calorie tracking."
+        
+  - task: "Health Tracking"
+    implemented: true
+    working: "unknown"
+    file: "/app/frontend/app/(tabs)/health.tsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: "unknown"
+        agent: "main"
+        comment: "Implemented health metrics input (weight, height, measurements, progress photos) and workout logging with history display."
+        
+  - task: "Profile Screen"
+    implemented: true
+    working: "unknown"
+    file: "/app/frontend/app/(tabs)/profile.tsx"
+    stuck_count: 0
+    priority: "low"
+    needs_retesting: false
+    status_history:
+      - working: "unknown"
+        agent: "main"
+        comment: "Implemented profile screen with user info display and logout functionality."
+
+metadata:
+  created_by: "main_agent"
+  version: "1.0"
+  test_sequence: 1
+  run_ui: false
+
+test_plan:
+  current_focus:
+    - "User Authentication (Register & Login)"
+    - "Diet Plans CRUD"
+    - "Health Metrics Tracking"
+    - "Workout Logging & Stats"
+    - "Flexibility Scores"
+    - "Video Session Management"
+  stuck_tasks: []
+  test_all: true
+  test_priority: "high_first"
+
+agent_communication:
+  - agent: "main"
+    message: "Initial MVP implementation complete. All backend APIs are implemented with MongoDB integration. Frontend has all screens built with Expo/React Native. Please test all backend endpoints comprehensively. Test data flow: 1) Register/Login users (both instructor and student), 2) Create diet plans as instructor, 3) Add health metrics and workouts, 4) Verify data persistence and retrieval. Note: Video calling is basic UI only (WebRTC not fully integrated), Posture matching is placeholder."
